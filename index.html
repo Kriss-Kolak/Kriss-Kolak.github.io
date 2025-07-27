@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+        (function() {
+            const isGitHubPages = location.hostname.includes("github.io");
+            const repoName = "kriss-kolak.github.io"; // <- ZMIEŃ TO NA SWOJĄ NAZWĘ REPO!
+            const cssPath = isGitHubPages ? `/${repoName}/src/output.css` : `src/output.css`;
+
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = cssPath;
+
+            document.head.appendChild(link);
+        })();
+        </script>
         <meta charset="UTF-8">
         <title>Krzysztof Kolak Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
