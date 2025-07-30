@@ -1,11 +1,18 @@
-{
-    "projects":[
-        {
-            "projectID":1,
-            "projectName":"placeholderName",
-            "projectTarget":"placeholderTarget",
-            "projectSaving":"placeholderSaving",
-            "projectDesciption":"placeholderDescription"
-        }
-    ]
-}
+[
+  {
+    "title": "FEA Poisson Extractor",
+    "description": "Skrypt IronPython do Ansys ACT z GUI, który automatyzuje cały proces obliczeń współczynnika Poissona.",
+    "technologies": ["Python", "Ansys", "FEA"],
+    "image": "img/fea-poisson.png",
+    "live": "#",
+    "github": "https://github.com/kriss-kolak/fea-poisson"
+  },
+  {
+    "title": "Portfolio Website",
+    "description": "Moje osobiste portfolio napisane w HTML, Tailwind i DaisyUI. Zawiera dynamiczne efekty, karty i animacje.",
+    "technologies": ["HTML", "Tailwind", "JS"],
+    "image": "img/portfolio-site.png",
+    "live": "https://kriss-kolak.github.io/",
+    "github": "https://github.com/kriss-kolak/portfolio"
+  }
+]
