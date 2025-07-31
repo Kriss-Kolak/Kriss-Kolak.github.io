@@ -1,31 +1,31 @@
 [
   {
-    "title": "FEA Poisson Extractor",
-    "description": "IronPython script for Ansys ACT with a GUI that automates the entire process of Poisson's ratio calculation.",
-    "technologies": ["Python", "Ansys", "FEA"],
+    "title": "FEA Material Data Extractor",
+    "description": "IronPython script for Ansys ACT with a GUI that automates the process of calculating substitute material properties based on FEA simulations.",
+    "technologies": ["Python", "Ansys", "FEA", "ACT"],
     "image": "img/test.png",
     "live": "#",
     "github": "https://github.com/kriss-kolak/fea-poisson"
   },
   {
     "title": "Portfolio Website",
-    "description": "My personal portfolio built with HTML, Tailwind, and DaisyUI. Includes dynamic effects, cards, and animations.",
+    "description": "My personal portfolio built with HTML, Tailwind, and DaisyUI. Features dynamic UI effects, animated project cards, and responsive layout.",
     "technologies": ["HTML", "Tailwind", "JS"],
     "image": "img/test.png",
     "live": "https://kriss-kolak.github.io/",
-    "github": "https://github.com/kriss-kolak/portfolio"
+    "github": "https://github.com/kriss-kolak/kriss-kolak.github.io"
   },
   {
-    "title": "SAP Data Visualizer",
-    "description": "A tool for visualizing and analyzing data exported from SAP systems using interactive dashboards.",
-    "technologies": ["Python", "Pandas", "Power BI"],
+    "title": "SAP Data Extractor",
+    "description": "A GUI-based tool that extracts and organizes data directly from SAP systems for engineering or business use.",
+    "technologies": ["Python", "Tkinter", "SAP"],
     "image": "img/test.png",
     "live": "#",
     "github": "https://github.com/kriss-kolak/sap-visualizer"
   },
   {
     "title": "2D FEA Solver",
-    "description": "A custom 2D finite element method solver written in C, capable of analyzing static problems on triangular meshes.",
+    "description": "A custom solver for static 2D finite element analysis written in C. Supports triangular meshes and custom material input.",
     "technologies": ["C", "FEA", "Numerical Methods"],
     "image": "img/test.png",
     "live": "#",
@@ -33,7 +33,7 @@
   },
   {
     "title": "Budget Manager App",
-    "description": "Simple JS web app that helps users track income and expenses with dynamic charts and category tagging.",
+    "description": "A lightweight web app for tracking income and expenses with real-time charts and categorized financial entries.",
     "technologies": ["JavaScript", "Chart.js", "HTML"],
     "image": "img/test.png",
     "live": "https://kriss-kolak.github.io/budget-manager",
