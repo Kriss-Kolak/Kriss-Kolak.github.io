@@ -1,18 +1,42 @@
 [
   {
     "title": "FEA Poisson Extractor",
-    "description": "Skrypt IronPython do Ansys ACT z GUI, który automatyzuje cały proces obliczeń współczynnika Poissona.",
+    "description": "IronPython script for Ansys ACT with a GUI that automates the entire process of Poisson's ratio calculation.",
     "technologies": ["Python", "Ansys", "FEA"],
-    "image": "img/fea-poisson.png",
+    "image": "img/test.png",
     "live": "#",
     "github": "https://github.com/kriss-kolak/fea-poisson"
   },
   {
     "title": "Portfolio Website",
-    "description": "Moje osobiste portfolio napisane w HTML, Tailwind i DaisyUI. Zawiera dynamiczne efekty, karty i animacje.",
+    "description": "My personal portfolio built with HTML, Tailwind, and DaisyUI. Includes dynamic effects, cards, and animations.",
     "technologies": ["HTML", "Tailwind", "JS"],
-    "image": "img/portfolio-site.png",
+    "image": "img/test.png",
     "live": "https://kriss-kolak.github.io/",
     "github": "https://github.com/kriss-kolak/portfolio"
+  },
+  {
+    "title": "SAP Data Visualizer",
+    "description": "A tool for visualizing and analyzing data exported from SAP systems using interactive dashboards.",
+    "technologies": ["Python", "Pandas", "Power BI"],
+    "image": "img/test.png",
+    "live": "#",
+    "github": "https://github.com/kriss-kolak/sap-visualizer"
+  },
+  {
+    "title": "2D FEA Solver",
+    "description": "A custom 2D finite element method solver written in C, capable of analyzing static problems on triangular meshes.",
+    "technologies": ["C", "FEA", "Numerical Methods"],
+    "image": "img/test.png",
+    "live": "#",
+    "github": "https://github.com/kriss-kolak/2d-fea-solver"
+  },
+  {
+    "title": "Budget Manager App",
+    "description": "Simple JS web app that helps users track income and expenses with dynamic charts and category tagging.",
+    "technologies": ["JavaScript", "Chart.js", "HTML"],
+    "image": "img/test.png",
+    "live": "https://kriss-kolak.github.io/budget-manager",
+    "github": "https://github.com/kriss-kolak/budget-manager"
   }
 ]

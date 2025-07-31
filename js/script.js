@@ -33,3 +33,31 @@ document.addEventListener('DOMContentLoaded', function () {
       })
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('./portfolio.json')
+    .then(res => res.json())
+    .then(obj => {
+      const target = document.getElementById("projects");
+      obj.forEach(element => {
+        const card = document.createElement("div");
+        card.innerHTML = `
+          <div class="card bg-base-100 w-96 shadow-sm animate-fade-slide delay-300 p-5 border-2 m-2">
+          <figure>
+            <img src="${element.image}" alt="${element.title}" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">${element.title}</h2>
+            <p>${element.description}</p>
+            <p>${element.technologies.join(", ")}</p>
+            <div class="card-actions justify-end">
+              <a href="${element.github}" target="_blank" class="btn btn-primary">Visit GITHUB</a>
+            </div>
+          </div>
+        `;
+        target.appendChild(card);
+      });
+    })
+    .catch(err => console.error("Błąd wczytywania JSON:", err));
+});

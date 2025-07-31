@@ -17,7 +17,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-2xs: 18rem;
     --container-md: 28rem;
     --container-3xl: 48rem;
     --container-4xl: 56rem;
@@ -657,9 +656,6 @@
       isolation: isolate;
     }
   }
-  .invisible {
-    visibility: hidden;
-  }
   .toast {
     position: fixed;
     inset-inline-start: auto;
@@ -1189,6 +1185,9 @@
   .relative {
     position: relative;
   }
+  .static {
+    position: static;
+  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -1267,14 +1266,88 @@
       cursor: not-allowed;
     }
   }
+  .stack {
+    display: inline-grid;
+    grid-template-columns: 3px 4px 1fr 4px 3px;
+    grid-template-rows: 3px 4px 1fr 4px 3px;
+    & > * {
+      height: 100%;
+      width: 100%;
+      &:nth-child(n + 2) {
+        width: 100%;
+        opacity: 70%;
+      }
+      &:nth-child(2) {
+        z-index: 2;
+        opacity: 90%;
+      }
+      &:nth-child(1) {
+        z-index: 3;
+        width: 100%;
+      }
+    }
+    &, &.stack-bottom {
+      > * {
+        grid-column: 3 / 4;
+        grid-row: 3 / 6;
+        &:nth-child(2) {
+          grid-column: 2 / 5;
+          grid-row: 2 / 5;
+        }
+        &:nth-child(1) {
+          grid-column: 1 / 6;
+          grid-row: 1 / 4;
+        }
+      }
+    }
+    &.stack-top {
+      > * {
+        grid-column: 3 / 4;
+        grid-row: 1 / 4;
+        &:nth-child(2) {
+          grid-column: 2 / 5;
+          grid-row: 2 / 5;
+        }
+        &:nth-child(1) {
+          grid-column: 1 / 6;
+          grid-row: 3 / 6;
+        }
+      }
+    }
+    &.stack-start {
+      > * {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+        &:nth-child(2) {
+          grid-column: 2 / 5;
+          grid-row: 2 / 5;
+        }
+        &:nth-child(1) {
+          grid-column: 3 / 6;
+          grid-row: 1 / 6;
+        }
+      }
+    }
+    &.stack-end {
+      > * {
+        grid-column: 3 / 6;
+        grid-row: 3 / 4;
+        &:nth-child(2) {
+          grid-column: 2 / 5;
+          grid-row: 2 / 5;
+        }
+        &:nth-child(1) {
+          grid-column: 1 / 4;
+          grid-row: 1 / 6;
+        }
+      }
+    }
+  }
   .z-0 {
     z-index: 0;
   }
   .z-1 {
     z-index: 1;
-  }
-  .col-span-4 {
-    grid-column: span 4 / span 4;
   }
   .hero {
     display: grid;
@@ -1302,9 +1375,6 @@
     grid-row-start: 1;
     min-width: calc(0.25rem * 0);
   }
-  .row-auto {
-    grid-row: auto;
-  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -1323,8 +1393,11 @@
       max-width: 96rem;
     }
   }
-  .m-auto {
-    margin: auto;
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+  .m-4 {
+    margin: calc(var(--spacing) * 4);
   }
   .filter {
     display: flex;
@@ -1638,14 +1711,14 @@
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
-  }
-  .flex-row {
-    flex-direction: row;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -1700,15 +1773,12 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-8 {
+  .border-2 {
     border-style: var(--tw-border-style);
-    border-width: 8px;
+    border-width: 2px;
   }
   .border-gray-600 {
     border-color: var(--color-gray-600);
-  }
-  .bg-accent {
-    background-color: var(--color-accent);
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
@@ -1794,20 +1864,11 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
-  }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
-  }
-  .pt-4 {
-    padding-top: calc(var(--spacing) * 4);
   }
   .text-center {
     text-align: center;
@@ -1888,6 +1949,10 @@
   }
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xl {
+    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .outline {
